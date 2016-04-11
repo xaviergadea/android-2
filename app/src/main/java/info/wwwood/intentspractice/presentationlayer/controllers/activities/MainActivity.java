@@ -1,5 +1,6 @@
 package info.wwwood.intentspractice.presentationlayer.controllers.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,13 +18,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button main_btAsignar=(Button) findViewById((R.id.main_btAsignar));
-        main_btAsignar.setOnClickListener(this); //IMPLEMENTEM CONTROLADORA DE CLICKS
+        Button main_btWeb=(Button) findViewById((R.id.main_btWeb));
+        main_btWeb.setOnClickListener(this); //IMPLEMENTEM CONTROLADORA DE CLICKS
 
-        TextView main_tvTexto=(TextView) findViewById(R.id.main_tvTexto);  //devuelve una referencia de un objeto tipo view. Se hace un cast para transformar a Texview(el que està entre parèntesis)
+        //TextView main_tvTexto=(TextView) findViewById(R.id.main_tvTexto);  //devuelve una referencia de un objeto tipo view. Se hace un cast para transformar a Texview(el que està entre parèntesis)
 
       //  EditText main_editText=(EditText) findViewById(R.id.main_editText);
-        main_tvTexto.setText("HOLA MUNDO");
+        //main_tvTexto.setText("HOLA MUNDO");
 
         /*Persona p1=new Persona();
         Persona p2=new Ingles();
@@ -43,9 +44,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        EditText main_editText=(EditText) findViewById(R.id.main_editText);
+        /*EditText main_editText=(EditText) findViewById(R.id.main_editText);
         TextView main_tvTexto=(TextView) findViewById(R.id.main_tvTexto);  //devuelve una referencia de un objeto tipo view. Se hace un cast para transformar a Texview(el que està entre parèntesis)
-        main_tvTexto.setText(main_editText.getText().toString());
+        main_tvTexto.setText(main_editText.getText().toString());*/
+
+        Intent intent=null;
+
+        switch (v.getId()){
+            case R.id.main_btWeb:
+                intent=new Intent(this,WebActivity.class); // li dius quina classe s'ha d'executar al clickar el botó main_btWeb
+                break;
+
+        }
+        startActivity(intent); //engeguem l'activitat
     }
 
 
