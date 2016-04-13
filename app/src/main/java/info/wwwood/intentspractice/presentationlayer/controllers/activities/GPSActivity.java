@@ -29,7 +29,7 @@ public class GPSActivity extends AppCompatActivity implements View.OnClickListen
                 //to do
                 Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + GPS_EtLocalizar.getText().toString());
                 intent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                 intent.setPackage("com.google.android.apps.maps");
+                intent.setPackage("com.google.android.apps.maps");
                 break;
         }
         startActivity(intent); //engeguem l'activitat

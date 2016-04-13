@@ -27,4 +27,13 @@
         android:layout_below="@+id/main_btWeb"
         android:layout_alignStart="@+id/main_btWeb" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dialer"
+        android:id="@+id/main_btDialer"
+        android:layout_below="@+id/main_btGPS"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp"/>
+
 </RelativeLayout>
