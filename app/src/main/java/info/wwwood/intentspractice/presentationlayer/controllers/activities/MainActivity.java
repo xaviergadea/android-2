@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button main_btWeb=(Button) findViewById((R.id.main_btWeb));
         main_btWeb.setOnClickListener(this); //IMPLEMENTEM CONTROLADORA DE CLICKS
 
+        Button main_btGPS=(Button) findViewById((R.id.main_btGPS));
+        main_btGPS.setOnClickListener(this); //IMPLEMENTEM CONTROLADORA DE CLICKS
+
         //TextView main_tvTexto=(TextView) findViewById(R.id.main_tvTexto);  //devuelve una referencia de un objeto tipo view. Se hace un cast para transformar a Texview(el que està entre parèntesis)
 
       //  EditText main_editText=(EditText) findViewById(R.id.main_editText);
@@ -53,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.main_btWeb:
                 intent=new Intent(this,WebActivity.class); // li dius quina classe s'ha d'executar al clickar el botó main_btWeb
+                break;
+            case R.id.main_btGPS:
+                intent=new Intent(this,GPSActivity.class); // li dius quina classe s'ha d'executar al clickar el botó main_btWeb
                 break;
 
         }
