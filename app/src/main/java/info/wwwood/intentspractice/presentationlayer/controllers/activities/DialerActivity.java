@@ -1,6 +1,7 @@
 package info.wwwood.intentspractice.presentationlayer.controllers.activities;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.Image;
@@ -52,7 +53,8 @@ public class DialerActivity extends AppCompatActivity implements View.OnClickLis
                    llamar();
                     break;
                 case R.id.dialer_ibtSearch:
-                    intent = new Intent(Intent.ACTION_SEARCH);
+                    intent=new Intent(this,ContactActivity.class);
+                    startActivityForResult(intent,1);
                     break;
             }
 
@@ -101,6 +103,21 @@ public class DialerActivity extends AppCompatActivity implements View.OnClickLis
 
             // other 'case' lines to check for other
             // permissions this app might request
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == Activity.RESULT_OK){
+                EditTextNoKB dialer_etNumber = (EditTextNoKB) findViewById(R.id.dialer_etNumber);
+                String result=data.getStringExtra("Telefono");
+                dialer_etNumber.setText(result);
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
         }
     }
 }
