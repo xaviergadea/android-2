@@ -111,9 +111,7 @@ public class DialerActivity extends AppCompatActivity implements View.OnClickLis
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if(resultCode == Activity.RESULT_OK){
-                EditTextNoKB dialer_etNumber = (EditTextNoKB) findViewById(R.id.dialer_etNumber);
-                String result=data.getStringExtra("Telefono");
-                dialer_etNumber.setText(result);
+                ((EditText) findViewById(R.id.dialer_etNumber)).setText(data.getStringExtra("Telefono"));
             }
             if (resultCode == Activity.RESULT_CANCELED) {
                 //Write your code if there's no result
